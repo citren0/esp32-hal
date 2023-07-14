@@ -1,24 +1,40 @@
 #include <string.h>
 
 #include "gpio.h"
+#include "init.c"
 
 extern unsigned int _sbss, _ebss, _sidata, _sdata, _edata;
 
+void spinForever(void)
+{
+	while (1)
+	{
+		asm("nop");
+	}
+	
+}
+
 void spin(void)
 {
-  volatile int var = 100000;
-  while (var--) ;
+	long val = 30000000;
+	while (val)
+	{
+		asm("nop");
+		val--;
+	}
 }
 
 int main(void)
 {
 	setMode(26, OUTPUT);
-	// Increment a variable.
+	
 	while (1)
 	{
-		writePin(26, HIGH);
 		spin();
+		togglePin(26);
+
 	}
+	
 
   return 0;
 }
@@ -31,6 +47,8 @@ void __attribute__((noreturn)) call_start_cpu0()
 	memset(&_sbss, 0, (&_ebss - &_sbss) * sizeof(_sbss));
 	// Copy initialized data.
 	memmove(&_sdata, &_sidata, (&_edata - &_sdata) * sizeof(_sdata));
+	// Initialize system.
+	init();
 	// Done, branch to main
 	main();
 	// (Should never be reached)
