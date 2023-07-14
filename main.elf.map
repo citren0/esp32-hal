@@ -1,0 +1,183 @@
+Archive member included to satisfy reference by file (symbol)
+
+/home/cdavis/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/12.2.0/../../../../xtensa-esp32-elf/lib/libc.a(lib_a-memcpy.o)
+                              src/main.o (memcpy)
+/home/cdavis/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/12.2.0/../../../../xtensa-esp32-elf/lib/libc.a(lib_a-memset.o)
+                              src/main.o (memset)
+
+Discarded input sections
+
+ .literal.setMode
+                0x0000000000000000        0x0 src/main.o
+ .literal.writePin
+                0x0000000000000000        0x0 src/main.o
+ .literal.spin  0x0000000000000000        0x0 src/main.o
+ .literal.startup.main
+                0x0000000000000000        0x0 src/main.o
+ .literal.call_start_cpu0
+                0x0000000000000000        0x0 src/main.o
+ .text          0x0000000000000000        0x0 src/main.o
+ .data          0x0000000000000000        0x0 src/main.o
+ .bss           0x0000000000000000        0x0 src/main.o
+ .text.setMode  0x0000000000000000       0x4c src/main.o
+ .text.writePin
+                0x0000000000000000       0x21 src/main.o
+ .xt.lit        0x0000000000000000       0x28 src/main.o
+ .xt.prop       0x0000000000000000      0x114 src/main.o
+ .literal       0x0000000000000000        0x0 /home/cdavis/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/12.2.0/../../../../xtensa-esp32-elf/lib/libc.a(lib_a-memcpy.o)
+ .data          0x0000000000000000        0x0 /home/cdavis/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/12.2.0/../../../../xtensa-esp32-elf/lib/libc.a(lib_a-memcpy.o)
+ .bss           0x0000000000000000        0x0 /home/cdavis/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/12.2.0/../../../../xtensa-esp32-elf/lib/libc.a(lib_a-memcpy.o)
+ .xt.prop       0x0000000000000000      0x15c /home/cdavis/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/12.2.0/../../../../xtensa-esp32-elf/lib/libc.a(lib_a-memcpy.o)
+ .literal       0x0000000000000000        0x0 /home/cdavis/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/12.2.0/../../../../xtensa-esp32-elf/lib/libc.a(lib_a-memset.o)
+ .data          0x0000000000000000        0x0 /home/cdavis/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/12.2.0/../../../../xtensa-esp32-elf/lib/libc.a(lib_a-memset.o)
+ .bss           0x0000000000000000        0x0 /home/cdavis/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/12.2.0/../../../../xtensa-esp32-elf/lib/libc.a(lib_a-memset.o)
+ .xt.prop       0x0000000000000000       0xd8 /home/cdavis/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/12.2.0/../../../../xtensa-esp32-elf/lib/libc.a(lib_a-memset.o)
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+iram_seg         0x0000000040080400 0x000000000000fc00 xr
+dram_seg         0x000000003fff0000 0x0000000000001000 rw
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+LOAD src/main.o
+LOAD /home/cdavis/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/12.2.0/../../../../xtensa-esp32-elf/lib/libm.a
+LOAD /home/cdavis/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/12.2.0/../../../../xtensa-esp32-elf/lib/libc.a
+LOAD /home/cdavis/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/12.2.0/libgcc.a
+
+.iram.text      0x0000000040080400      0x264
+                0x0000000040080400                . = ALIGN (0x10)
+ *(.entry.text)
+ *(.text)
+ .text          0x0000000040080400      0x135 /home/cdavis/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/12.2.0/../../../../xtensa-esp32-elf/lib/libc.a(lib_a-memcpy.o)
+                0x0000000040080440                memcpy
+ *fill*         0x0000000040080535        0x3 
+ .text          0x0000000040080538       0x74 /home/cdavis/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/12.2.0/../../../../xtensa-esp32-elf/lib/libc.a(lib_a-memset.o)
+                0x0000000040080560                memset
+ *(.text*)
+ .text.spin     0x00000000400805ac       0x21 src/main.o
+                0x00000000400805b0                spin
+ *fill*         0x00000000400805cd        0x3 
+ .text.startup.main
+                0x00000000400805d0       0x5b src/main.o
+                                         0x5f (size before relaxing)
+                0x00000000400805dc                main
+ *fill*         0x000000004008062b        0x1 
+ .text.call_start_cpu0
+                0x000000004008062c       0x38 src/main.o
+                                         0x4c (size before relaxing)
+                0x0000000040080638                call_start_cpu0
+ *fill*         0x0000000040080664        0x0 
+ *fill*         0x0000000040080664        0x0 
+ *(.init)
+ *(.fini)
+ *(.rodata)
+ *(.rodata*)
+                0x0000000040080664                . = ALIGN (0x4)
+                0x0000000040080664                _etext = .
+                0x0000000040080664                _sidata = .
+
+.data           0x000000003fff0000        0x0 load address 0x0000000040080664
+                0x000000003fff0000                . = ALIGN (0x4)
+                0x000000003fff0000                _sdata = .
+ *(.data)
+ *(.data*)
+                0x000000003fff0000                . = ALIGN (0x4)
+                0x000000003fff0000                _edata = .
+
+.bss            0x000000003fff0000        0x0
+                0x000000003fff0000                . = ALIGN (0x4)
+                0x000000003fff0000                _sbss = .
+ *(.bss)
+ *(.bss*)
+ *(COMMON)
+                0x000000003fff0000                . = ALIGN (0x4)
+                0x000000003fff0000                _ebss = .
+                0x000000003fff0000                . = ALIGN (0x4)
+                [!provide]                        PROVIDE (end = .)
+                [!provide]                        PROVIDE (_end = .)
+OUTPUT(main.elf elf32-xtensa-le)
+
+.debug_frame    0x0000000000000000       0x88
+ .debug_frame   0x0000000000000000       0x88 src/main.o
+
+.debug_info     0x0000000000000000      0x557
+ .debug_info    0x0000000000000000      0x4f7 src/main.o
+ .debug_info    0x00000000000004f7       0x31 /home/cdavis/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/12.2.0/../../../../xtensa-esp32-elf/lib/libc.a(lib_a-memcpy.o)
+ .debug_info    0x0000000000000528       0x2f /home/cdavis/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/12.2.0/../../../../xtensa-esp32-elf/lib/libc.a(lib_a-memset.o)
+
+.debug_abbrev   0x0000000000000000      0x241
+ .debug_abbrev  0x0000000000000000      0x1ff src/main.o
+ .debug_abbrev  0x00000000000001ff       0x21 /home/cdavis/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/12.2.0/../../../../xtensa-esp32-elf/lib/libc.a(lib_a-memcpy.o)
+ .debug_abbrev  0x0000000000000220       0x21 /home/cdavis/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/12.2.0/../../../../xtensa-esp32-elf/lib/libc.a(lib_a-memset.o)
+
+.debug_loclists
+                0x0000000000000000       0xbc
+ .debug_loclists
+                0x0000000000000000       0xbc src/main.o
+
+.debug_aranges  0x0000000000000000       0x80
+ .debug_aranges
+                0x0000000000000000       0x40 src/main.o
+ .debug_aranges
+                0x0000000000000040       0x20 /home/cdavis/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/12.2.0/../../../../xtensa-esp32-elf/lib/libc.a(lib_a-memcpy.o)
+ .debug_aranges
+                0x0000000000000060       0x20 /home/cdavis/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/12.2.0/../../../../xtensa-esp32-elf/lib/libc.a(lib_a-memset.o)
+
+.debug_rnglists
+                0x0000000000000000       0x2b
+ .debug_rnglists
+                0x0000000000000000       0x2b src/main.o
+
+.debug_line     0x0000000000000000      0x760
+ .debug_line    0x0000000000000000      0x30b src/main.o
+ .debug_line    0x000000000000030b      0x30f /home/cdavis/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/12.2.0/../../../../xtensa-esp32-elf/lib/libc.a(lib_a-memcpy.o)
+ .debug_line    0x000000000000061a      0x146 /home/cdavis/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/12.2.0/../../../../xtensa-esp32-elf/lib/libc.a(lib_a-memset.o)
+
+.debug_str      0x0000000000000000      0x535
+ .debug_str     0x0000000000000000      0x3f9 src/main.o
+                                        0x451 (size before relaxing)
+ .debug_str     0x00000000000003f9       0xdc /home/cdavis/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/12.2.0/../../../../xtensa-esp32-elf/lib/libc.a(lib_a-memcpy.o)
+                                         0xe3 (size before relaxing)
+ .debug_str     0x00000000000004d5       0x60 /home/cdavis/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/12.2.0/../../../../xtensa-esp32-elf/lib/libc.a(lib_a-memset.o)
+                                         0xe3 (size before relaxing)
+
+.debug_line_str
+                0x0000000000000000      0x318
+ .debug_line_str
+                0x0000000000000000      0x241 src/main.o
+                                        0x267 (size before relaxing)
+ .debug_line_str
+                0x0000000000000241       0xce /home/cdavis/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/12.2.0/../../../../xtensa-esp32-elf/lib/libc.a(lib_a-memcpy.o)
+ .debug_line_str
+                0x000000000000030f        0x9 /home/cdavis/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/12.2.0/../../../../xtensa-esp32-elf/lib/libc.a(lib_a-memset.o)
+                                         0xce (size before relaxing)
+
+.comment        0x0000000000000000       0x2f
+ .comment       0x0000000000000000       0x2f src/main.o
+                                         0x30 (size before relaxing)
+
+.xtensa.info    0x0000000000000000       0x38
+ .xtensa.info   0x0000000000000000       0x38 src/main.o
+ .xtensa.info   0x0000000000000038        0x0 /home/cdavis/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/12.2.0/../../../../xtensa-esp32-elf/lib/libc.a(lib_a-memcpy.o)
+ .xtensa.info   0x0000000000000038        0x0 /home/cdavis/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/12.2.0/../../../../xtensa-esp32-elf/lib/libc.a(lib_a-memset.o)
+
+Cross Reference Table
+
+Symbol                                            File
+_ebss                                             src/main.o
+_edata                                            src/main.o
+_sbss                                             src/main.o
+_sdata                                            src/main.o
+_sidata                                           src/main.o
+call_start_cpu0                                   src/main.o
+main                                              src/main.o
+memcpy                                            /home/cdavis/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/12.2.0/../../../../xtensa-esp32-elf/lib/libc.a(lib_a-memcpy.o)
+                                                  src/main.o
+memset                                            /home/cdavis/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/12.2.0/../../../../xtensa-esp32-elf/lib/libc.a(lib_a-memset.o)
+                                                  src/main.o
+setMode                                           src/main.o
+spin                                              src/main.o
+writePin                                          src/main.o
