@@ -1,9 +1,10 @@
 #include <string.h>
 
 #include "gpio.h"
-#include "init.c"
 
-extern unsigned int _sbss, _ebss, _sidata, _sdata, _edata;
+
+
+
 
 void spinForever(void)
 {
@@ -26,12 +27,12 @@ void spin(void)
 
 int main(void)
 {
-	setMode(26, OUTPUT);
+	setMode(5, OUTPUT);
 	
 	while (1)
 	{
 		spin();
-		togglePin(26);
+		togglePin(5);
 
 	}
 	
@@ -40,20 +41,6 @@ int main(void)
 }
 
 
-// Startup logic; this is the application entry point.
-void __attribute__((noreturn)) call_start_cpu0()
-{
-	// Clear BSS.
-	memset(&_sbss, 0, (&_ebss - &_sbss) * sizeof(_sbss));
-	// Copy initialized data.
-	memmove(&_sdata, &_sidata, (&_edata - &_sdata) * sizeof(_sdata));
-	// Initialize system.
-	init();
-	// Done, branch to main
-	main();
-	// (Should never be reached)
-	while (1)
-	{
-		;
-	}
-}
+
+
+#include "init.c"

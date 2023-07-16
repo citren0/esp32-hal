@@ -31,13 +31,13 @@ ASFLAGS += $(ASFLAGS_PLATFORM)
 
 # Set C source files.
 C_SRC += \
-	./src/main.c \
+  ./src/main.c \
 
 OBJS += $(C_SRC:.c=.o)
 
 # Set the first rule in the file to 'make all'
 .PHONY: all
-all: main.elf
+all: firmware.elf
 
 # Rules to build files.
 %.o: %.S
@@ -46,17 +46,16 @@ all: main.elf
 %.o: %.c
 	$(CC) -c $(CFLAGS) $< -o $@
 
-main.elf: $(OBJS)
+firmware.elf: $(OBJS)
 	$(CC) $^ $(LDFLAGS) -o $@
 
-
 flash: all
-	esptool --chip esp32 elf2image --flash_mode="dio" --flash_freq "40m" --flash_size "4MB" -o main.bin main.elf
-	sudo esptool --chip esp32 --port /dev/ttyUSB0 --baud 115200 --before default_reset --after hard_reset write_flash -z --flash_mode dio --flash_freq 40m --flash_size detect 0x1000 main.bin
+	esptool.py --chip esp32 elf2image --flash_mode="dio" --flash_freq "40m" --flash_size "4MB" -o firmware.bin firmware.elf
+	esptool.py --chip esp32 --port /dev/ttyUSB0 --baud 115200 --before default_reset --after hard_reset write_flash -z --flash_mode dio --flash_freq 40m --flash_size detect 0x1000 firmware.bin
 
 # Target to clean build artifacts.
 .PHONY: clean
 clean:
 	rm -f $(OBJS)
-	rm -f ./main.bin
-	rm -f ./main.elf ./main.elf.map
+	rm -f ./firmware.bin
+	rm -f ./firmware.elf ./firmware.elf.map
