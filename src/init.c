@@ -5,6 +5,10 @@
 #include "regs.h"
 
 
+
+int main(void);
+
+
 static inline void init(void) {
 
     // Disable write protection on the RTC
@@ -55,4 +59,48 @@ void __attribute__((noreturn)) call_start_cpu0()
     {
         ;
     }
+}
+
+
+static uint64_t systick(void)
+{
+    // Notify the ESP of a incoming timer read to populate the registers.
+    ((volatile uint32_t *)ESP32_TIMERGROUP0)[3] = 1;
+    
+    // Give it a minute
+    //asm volatile("nop");
+
+    // Read the value as a 64 bit integer which corresponds to 
+    return ((uint64_t) ((volatile uint32_t *)ESP32_TIMERGROUP0)[2] << 32) | ((volatile uint32_t *)ESP32_TIMERGROUP0)[1];
+}
+
+
+static uint64_t uptime_us(void)
+{
+    // systick returns in 32nds of a microsecond.
+    return systick() >> 5;
+}
+
+
+static void delay_us(unsigned long us)
+{
+    // Tick value of the intended timeout.
+    uint64_t timeout = uptime_us() + us;
+
+    // Wait until the timeout.
+    while (uptime_us() < timeout)
+    {
+        asm volatile("nop");
+    }
+}
+
+
+static void delay_ms(unsigned long ms)
+{
+    delay_us(ms * 1000);
+}
+
+static void delay_s(unsigned long s)
+{
+    delay_us(s * 1000000);
 }

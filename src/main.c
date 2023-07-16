@@ -2,7 +2,7 @@
 
 #include "gpio.h"
 
-
+#include "init.c"
 
 
 
@@ -20,7 +20,7 @@ void spin(void)
 	long val = 30000000;
 	while (val)
 	{
-		asm("nop");
+		asm volatile("nop");
 		val--;
 	}
 }
@@ -31,7 +31,7 @@ int main(void)
 	
 	while (1)
 	{
-		spin();
+		delay_ms(500);
 		togglePin(5);
 
 	}
@@ -40,7 +40,3 @@ int main(void)
   return 0;
 }
 
-
-
-
-#include "init.c"
