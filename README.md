@@ -6,10 +6,10 @@ This software was heavily inspired by this blog post [https://vivonomicon.com/20
 
 The register locations and layouts come from the ESP32 Reference Manual at [https://www.espressif.com/sites/default/files/documentation/esp32_technical_reference_manual_en.pdf](https://www.espressif.com/sites/default/files/documentation/esp32_technical_reference_manual_en.pdf)
 
-#Compilation
+# Compilation
 
 $ make all
 
-#Flashing
+# Flashing
 
 $ make flash
